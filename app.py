@@ -30,7 +30,9 @@ if st.button("Send") and user_input:
     st.session_state.chat_history.append(response)
 
     # Rerun to update the display
-    st.experimental_rerun()
+    import random
+    st.experimental_set_query_params(rerun=str(random.random()))
+
 
 # Display the conversation history
 for message in st.session_state.chat_history:
