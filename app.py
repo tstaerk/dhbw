@@ -1,5 +1,6 @@
 import os
 import streamlit as st
+st.write("Streamlit version:", st.__version__)
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage, AIMessage
 
