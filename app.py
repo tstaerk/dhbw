@@ -4,7 +4,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage, AIMessage
 
 # Set your OpenAI API key (you can also load it from a .env file)
-os.environ["OPENAI_API_KEY"] = "YOUR_OPENAI_API_KEY_HERE"
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 # Initialize the LangChain chat model (using GPT-3.5 Turbo in this example)
 llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.7)
