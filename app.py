@@ -31,7 +31,7 @@ if st.button("Send") and user_input:
 
     # Rerun to update the display
     import random
-    st.experimental_set_query_params(rerun=str(random.random()))
+    st.query_params(rerun=str(random.random()))
 
 
 # Display the conversation history
