@@ -9,6 +9,6 @@ import os
 
 st.write(os.environ['API_KEY'])
 ai.configure(api_key=os.environ['API_KEY'])
-model = ai.GenerativeModel("gemini-pro")
+model = ai.GenerativeModel("gemini-1.5-pro-002")
 
 st.write(model.generate_content("tell a joke").candidates[0].content.parts[0].text)
