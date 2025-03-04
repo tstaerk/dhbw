@@ -4,7 +4,7 @@ from langchain.schema import HumanMessage, AIMessage, SystemMessage
 
 
 # Initialize chat model
-llm = ChatOpenAI(model_name="gpt-3.5-turbo")
+llm = ChatOpenAI(model_name="gpt-4o")
 
 st.title("Dschettbott")
 
