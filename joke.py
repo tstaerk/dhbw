@@ -1,6 +1,6 @@
 import streamlit as st
-st.write("Streamlit version:", st.__version__)
 
+st.write("Streamlit version:", st.__version__)
 import google.generativeai as ai
 import os
 
@@ -8,6 +8,8 @@ import os
 # It is useful not only to put a smile on your face, but also to check if you have set up libraries and API keys correctly
 
 ai.configure(api_key=API_KEY)
+st.write(API_KEY)
+st.write(os.environ['API_KEY']
 
 model = ai.GenerativeModel("gemini-pro")
 
