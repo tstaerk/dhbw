@@ -7,8 +7,6 @@ import os
 # This program lets AI tell a joke
 # It is useful not only to put a smile on your face, but also to check if you have set up libraries and API keys correctly
 
-ai.configure(api_key=API_KEY)
-st.write(API_KEY)
 st.write(os.environ['API_KEY'])
 
 model = ai.GenerativeModel("gemini-pro")
