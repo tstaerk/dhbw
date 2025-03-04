@@ -11,4 +11,4 @@ import os
 ai.configure(api_key=os.environ['API_KEY'])
 model = ai.GenerativeModel("gemini-2.0-flash-001") # to find out what models are available, go to https://console.cloud.google.com -> vertex AI -> freeform and have a look at the right-hand-side panel which has a selection for "Model"
 
-st.write(model.generate_content("tell a joke").candidates[0].content.parts[0].text)
+st.write(model.generate_content("tell a random joke").candidates[0].content.parts[0].text)
