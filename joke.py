@@ -9,7 +9,7 @@ import os
 
 ai.configure(api_key=API_KEY)
 st.write(API_KEY)
-st.write(os.environ['API_KEY']
+st.write(os.environ['API_KEY'])
 
 model = ai.GenerativeModel("gemini-pro")
 
