@@ -4,7 +4,7 @@ from langchain.schema import HumanMessage, AIMessage, SystemMessage
 
 
 # Initialize chat model
-llm = ChatOpenAI(model_name="gpt-3.5-turbo")
+llm = ChatOpenAI(model_name="gpt-4o")
 
 st.title("Dschettbott")
 
@@ -12,7 +12,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 # Use the new chat_input
-user_input = st.chat_input("Type your message...")
+user_input = st.chat_input("Stell dei Frach...")
 
 if user_input:
     # Display user message
