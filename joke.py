@@ -8,7 +8,7 @@ import os
 # It is useful not only to put a smile on your face, but also to check if you have set up libraries and API keys correctly
 
 st.write(os.environ['API_KEY'])
-
+ai.configure(api_key=os.environ['API_KEY'])
 model = ai.GenerativeModel("gemini-pro")
 
 st.write(model.generate_content("tell a joke").candidates[0].content.parts[0].text)
