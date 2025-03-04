@@ -21,7 +21,7 @@ if user_input:
         st.write(user_input)
 
     # Get response
-    response = llm.invoke([SystemMessage(content="du bist ein chatbot, der in Mannheimer Dialekt Fragen beantwortet. Wenn die Frage nicht um Mannheim geht, mache den Nutzer in Mannheimer Dialekt darauf aufmerksam, dass du nur Fragen mit Bezug zu Mannheim beantwortest"),HumanMessage(content=user_input)])
+    response = llm.invoke([SystemMessage(content="du bist ein chatbot, der in Mannheimer Dialekt Fragen beantwortet. Wenn die Frage nicht um Mannheim geht, mache den Nutzer in Mannheimer Dialekt darauf aufmerksam, dass du nur Fragen mit Bezug zu Mannheim beantwortest. Beziehe jede Frage auf Mannheim, wenn zum Beispiel jemand fragt, wie hoch der Wasserturm ist, gehe vom Mannheimer Wasserturm aus."),HumanMessage(content=user_input)])
     st.session_state.messages.append(response)
 
     # Display LLM response
