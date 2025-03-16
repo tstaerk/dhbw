@@ -57,14 +57,13 @@ if __name__ == "__main__":
     pdf_file = "your_pdf.pdf"  # Replace with your PDF file path
     api_key = os.getenv('OPENAI_API_KEY')
 
-
-    user_query = input("Ich habe das PDF in your_pdf.pdf komplett gelesen und verstanden, stelle mir gerne eine Frage dazu: ")
-
-    if os.path.exists(pdf_file):
-        answer = rag_pdf(pdf_file, api_key, user_query)
-        print(f"Question: {user_query}")
-        print(f"Answer: {answer}")
-    elif not os.path.exists(pdf_file):
-        print(f"Error: PDF file '{pdf_file}' not found.")
-    else:
-        print("Error: Please replace 'YOUR_OPENAI_API_KEY' with your actual OpenAI API key.")
+    user_query="something"
+    while user_query != "":
+      user_query = input("I read your_pdf.pdf, ask me a question about it: ")
+      if user_query != "":
+        if os.path.exists(pdf_file):
+          answer = rag_pdf(pdf_file, api_key, user_query)
+          print(f"Question: {user_query}")
+          print(f"Answer: {answer}")
+        elif not os.path.exists(pdf_file):
+          print(f"Error: PDF file '{pdf_file}' not found.")
