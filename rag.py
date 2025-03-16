@@ -1,10 +1,16 @@
 import os
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import OpenAIEmbeddings  # Or other embedding models
+from langchain_openai import OpenAIEmbeddings  # Or other embedding models
 from langchain_community.vectorstores import FAISS  # Or other vector stores
 from langchain.chains import RetrievalQA
 from langchain_community.llms import OpenAI  # Or other LLMs
+
+# to get this running,
+# set the environment variable OPENAI_KEY to your openai api_key
+# put the PDF you want to examine into your_pdf.pdf
+# run pip install langchain-openai
+# run the program with the command python rag.py
 
 def rag_pdf(pdf_path, openai_api_key, query):
     """
