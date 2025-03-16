@@ -7,7 +7,7 @@ from langchain.chains import RetrievalQA
 from langchain_openai import OpenAI  # Or other LLMs
 
 # to get this running,
-# set the environment variable OPENAI_KEY to your openai api_key
+# set the environment variable OPENAI_API_KEY to your openai api_key
 # put the PDF you want to examine into your_pdf.pdf
 # run pip install langchain-openai
 # run the program with the command python rag.py
@@ -26,7 +26,6 @@ def rag_pdf(pdf_path, openai_api_key, query):
     """
 
     try:
-        os.environ["OPENAI_API_KEY"] = openai_api_key
 
         # 1. Load the PDF
         loader = PyPDFLoader(pdf_path)
@@ -56,7 +55,7 @@ def rag_pdf(pdf_path, openai_api_key, query):
 # Example Usage:
 if __name__ == "__main__":
     pdf_file = "your_pdf.pdf"  # Replace with your PDF file path
-    api_key = os.getenv('OPENAI_KEY')
+    api_key = os.getenv('OPENAI_API_KEY')
 
 
     user_query = input("Ich habe das PDF in your_pdf.pdf komplett gelesen und verstanden, stelle mir gerne eine Frage dazu: ")
