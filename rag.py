@@ -1,10 +1,10 @@
 import os
-from langchain.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import OpenAIEmbeddings  # Or other embedding models
-from langchain.vectorstores import FAISS  # Or other vector stores
+from langchain_community.embeddings import OpenAIEmbeddings  # Or other embedding models
+from langchain_community.vectorstores import FAISS  # Or other vector stores
 from langchain.chains import RetrievalQA
-from langchain.llms import OpenAI  # Or other LLMs
+from langchain_community.llms import OpenAI  # Or other LLMs
 
 def rag_pdf(pdf_path, openai_api_key, query):
     """
@@ -31,7 +31,7 @@ def rag_pdf(pdf_path, openai_api_key, query):
         texts = text_splitter.split_documents(documents)
 
         # 3. Create embeddings
-        embeddings = OpenAIEmbeddings() #Use other embedding models such as HuggingFaceEmbeddings if desired.
+        embeddings = OpenAIEmbeddings()
 
         # 4. Create the vector store
         vectorstore = FAISS.from_documents(texts, embeddings) #Use other vector stores such as Chroma, Pinecone, etc. if desired.
@@ -41,7 +41,7 @@ def rag_pdf(pdf_path, openai_api_key, query):
         qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever())
 
         # 6. Run the query
-        result = qa.run(query)
+        result = qa.invoke(query)
         return result
 
     except Exception as e:
