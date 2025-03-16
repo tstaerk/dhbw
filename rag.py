@@ -4,7 +4,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings  # Or other embedding models
 from langchain_community.vectorstores import FAISS  # Or other vector stores
 from langchain.chains import RetrievalQA
-from langchain_community.llms import OpenAI  # Or other LLMs
+from langchain_openai import OpenAI  # Or other LLMs
 
 # to get this running,
 # set the environment variable OPENAI_KEY to your openai api_key
