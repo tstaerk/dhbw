@@ -46,7 +46,7 @@ def rag_pdf(pdf_path, openai_api_key, query):
         qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever())
 
         # 6. Run the query
-        result = qa.invoke(query)
+        result = qa.invoke(query)['result']
         return result
 
     except Exception as e:
